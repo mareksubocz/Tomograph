@@ -100,8 +100,8 @@ def start_computing(SETTINGS):
 
 alpha = 0
 
-if __name__ == "__main__":
 
+def run():
     SETTINGS = {
         'img_name': "./img/Kwadraty2.jpg",
         'shape': (240, 240),
@@ -111,3 +111,7 @@ if __name__ == "__main__":
     }
 
     start_computing(SETTINGS)
+
+
+if __name__ == "__main__":
+    run()
