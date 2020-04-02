@@ -4,12 +4,13 @@ import matplotlib.pyplot as plt
 
 
 def parse_img(filename, shape):
-    img = Image.open(filename).convert("L")
-    img = img.resize(shape, Image.ANTIALIAS)
-    img = ImageOps.expand(
-        img, border=int(shape[0] * 0.25), fill='black')
-    arr = np.asarray(img)
-    return arr
+    img_original = Image.open(filename).convert("L")
+    img_original = img_original.resize(shape, Image.ANTIALIAS)
+    img = ImageOps.expand(img_original, border=int(
+        shape[0] * 0.25), fill='black')
+    img = np.asarray(img, dtype='float64')
+    img_original = np.asarray(img_original)
+    return img_original, img
 
 
 if __name__ == "__main__":
